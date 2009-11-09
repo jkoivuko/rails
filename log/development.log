@@ -3,3 +3,868 @@
   [4;36;1mSQL (6.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-08 21:30:40) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:31:24) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCourses (20091108191811)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (10.4ms)[0m   [0;1mCREATE TABLE "courses" ("id" serial primary key, "name" character varying(255), "description" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091108191811')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "courses" ("name", "created_at", "updated_at", "description") VALUES(E'test', '2009-11-08 19:35:16.613621', '2009-11-08 19:35:16.613621', E'test desc') RETURNING "id"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:35:41) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:35:44) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (106.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:36:44) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:36:47) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (123.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:37:03) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:37:06) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (106.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:37:11) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:42:58) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:42:59) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %>
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (106.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:43:25) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <!-- <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %> -->
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:43:26) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <!-- <% for course in @courses %> <ul> <%= course.name %> </ul>
+5: <% end %> -->
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (107.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:43:38) [GET]
+Rendering course/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:43:41) [GET]
+Rendering course/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:44:13) [GET]
+Rendering course/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:44:14) [GET]
+Rendering course/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:44:15) [GET]
+Rendering course/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:44:22) [GET]
+Rendering course/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-08 21:44:28) [GET]
+Rendering course/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.first) on line #4 of app/views/course/index.erb:
+1: Courses 2.0
+2: 
+3: <li>
+4: <%= @courses.first %>
+5: 
+6: </li>
+
+    app/views/course/index.erb:4
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-09 01:54:38) [GET]
+
+NoMethodError (undefined method `scaffold' for CourseController:Class):
+  app/controllers/course_controller.rb:2
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-09 01:54:40) [GET]
+
+NoMethodError (undefined method `scaffold' for CourseController:Class):
+  app/controllers/course_controller.rb:2
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-11-09 01:59:43) [GET]
+
+NoMethodError (undefined method `scaffold' for CourseController:Class):
+  app/controllers/course_controller.rb:2
+
+Rendered rescues/_trace (41.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CourseController#index (for 127.0.0.1 at 2009-11-09 01:59:58) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering course/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:00:03) [GET]
+  [4;35;1mCourse Load (1.4ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 70ms (View: 64, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:00:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.4ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:00:16) [GET]
+  [4;35;1mCourse Load (1.4ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 79ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:02:41) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 34ms (View: 28, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:02:42) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:02:42) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:02:42) [GET]
+  [4;35;1mCourse Load (1.4ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:03:47) [GET]
+  [4;36;1mCourse Load (2.0ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:03:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.6ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:04:42) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:04:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:04:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:04:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:04:46) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:04:49) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:04:52) [GET]
+  [4;35;1mCourse Load (1.4ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 78ms (View: 73, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:41) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 32ms (View: 27, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:41) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:42) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:42) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:42) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:10:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 78ms (View: 69, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:10:51) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 8, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:10:55) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:11:00) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:11:02) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:14:39) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:41) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:42) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:44) [GET]
+  [4;35;1mCourse Load (1.8ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:44) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:44) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:14:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:14:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:14:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:14:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/courses/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#edit (for 127.0.0.1 at 2009-11-09 02:14:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCourse Load (0.5ms)[0m   [0;1mSELECT * FROM "courses" WHERE ("courses"."id" = 1) [0m
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 79ms (View: 71, DB: 1) | 200 OK [http://localhost/courses/1/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:51) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 14ms (View: 9, DB: 2) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:14:52) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:14:53) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:20:01) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:20:03) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:20:04) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#new (for 127.0.0.1 at 2009-11-09 02:20:04) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/courses/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#create (for 127.0.0.1 at 2009-11-09 02:20:11) [POST]
+  Parameters: {"course"=>{"name"=>"test 2", "description"=>"desc 2"}, "commit"=>"Create", "authenticity_token"=>"Xk83e1wlNCtT4HrMMKgMGl8ZDJcJBY9VCBhM2IdYx/0="}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO "courses" ("name", "created_at", "updated_at", "description") VALUES(E'test 2', '2009-11-09 00:20:11.058462', '2009-11-09 00:20:11.058462', E'desc 2') RETURNING "id"[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/2
+Completed in 16ms (DB: 2) | 302 Found [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#show (for 127.0.0.1 at 2009-11-09 02:20:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCourse Load (0.5ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 2) [0m
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 80ms (View: 7, DB: 1) | 200 OK [http://localhost/courses/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:20:13) [GET]
+  [4;36;1mCourse Load (2.5ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 26ms (View: 19, DB: 3) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#edit (for 127.0.0.1 at 2009-11-09 02:20:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mCourse Load (0.4ms)[0m   [0mSELECT * FROM "courses" WHERE ("courses"."id" = 2) [0m
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/courses/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:20:16) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/courses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:20:20) [GET]
+  [4;35;1mCourse Load (1.3ms)[0m   [0mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/courses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CoursesController#index (for 127.0.0.1 at 2009-11-09 02:20:20) [GET]
+  [4;36;1mCourse Load (1.3ms)[0m   [0;1mSELECT * FROM "courses" [0m
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/courses]
