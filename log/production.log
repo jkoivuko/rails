@@ -1,0 +1,48 @@
+
+
+Processing ApplicationController#index (for 128.214.11.7 at 2009-11-12 01:42:15) [GET]
+
+NameError (uninitialized constant CourseController):
+  passenger (2.2.5) lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'
+  passenger (2.2.5) lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/utils.rb:183:in `safe_fork'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:163:in `start'
+  passenger (2.2.5) lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+  passenger (2.2.5) lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering /home/jkoivuko/rails/public/500.html (500 Internal Server Error)
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 01:43:54) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 26ms (View: 20, DB: 2) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 01:44:03) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/1]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 01:44:07) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
