@@ -46,3 +46,132 @@ Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 01:44:07) [GE
 Rendering template within layouts/courses
 Rendering courses/index
 Completed in 5ms (View: 3, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:29:45) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 57ms (View: 52, DB: 2) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:29:53) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:29:58) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 151ms (View: 149, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:30:03) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
+
+
+Processing CoursesController#edit (for 128.214.11.7 at 2009-11-12 03:30:09) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2/edit]
+
+
+Processing CoursesController#update (for 128.214.11.7 at 2009-11-12 03:30:14) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"gp26CzChYSXBYDalMOVF+Yw4UNTq8zD9wh+w2ErXdCI=", "id"=>"2"}
+Redirected to http://jkoivuko.rails.cs.helsinki.fi/courses/2
+Completed in 3ms (DB: 0) | 302 Found [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:30:21) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 26ms (View: 24, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:30:25) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
+
+
+Processing CoursesController#edit (for 128.214.11.7 at 2009-11-12 03:30:30) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2/edit]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:30:34) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 22ms (View: 21, DB: 1) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#new (for 128.214.11.7 at 2009-11-12 03:30:48) [GET]
+Rendering template within layouts/courses
+Rendering courses/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/new]
+
+
+Processing CoursesController#create (for 128.214.11.7 at 2009-11-12 03:30:59) [POST]
+  Parameters: {"course"=>{"name"=>"test 10", "description"=>"desc 10"}, "commit"=>"Create", "authenticity_token"=>"gp26CzChYSXBYDalMOVF+Yw4UNTq8zD9wh+w2ErXdCI="}
+Redirected to http://jkoivuko.rails.cs.helsinki.fi/courses/13
+Completed in 17ms (DB: 10) | 302 Found [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:31:01) [GET]
+  Parameters: {"id"=>"13"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/13]
+
+
+Processing CoursesController#edit (for 128.214.11.7 at 2009-11-12 03:31:05) [GET]
+  Parameters: {"id"=>"13"}
+Rendering template within layouts/courses
+Rendering courses/edit
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/13/edit]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:31:07) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 32ms (View: 30, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:31:09) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 71ms (View: 69, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:31:16) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 24ms (View: 23, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:31:21) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
+
+
+Processing CoursesController#index (for 128.214.11.7 at 2009-11-12 03:31:24) [GET]
+Rendering template within layouts/courses
+Rendering courses/index
+Completed in 24ms (View: 23, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses]
+
+
+Processing CoursesController#show (for 128.214.11.7 at 2009-11-12 03:31:29) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/courses
+Rendering courses/show
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://jkoivuko.rails.cs.helsinki.fi/courses/2]
