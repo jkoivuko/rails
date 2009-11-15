@@ -1,0 +1,17 @@
+<h1>Ilmo 2.0 Login</h1>
+<%= flash[:message] %>
+<br/> Please login <br/>
+<% form_for :user, :url => { :action => "login" } do |f| %>
+
+  <%= f.error_messages %>
+
+ Login: <%= f.text_field :login %><br />
+ Password: <%= f.password_field :password %><br />
+
+  <p>
+    <%= f.submit 'Login' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', courses_path %>

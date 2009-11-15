@@ -1,9 +1,12 @@
 class CoursesController < ApplicationController
+  before_filter :login_required
+  
   # GET /courses
   # GET /courses.xml
   def index
+    @user=session[:user]
     @courses = Course.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @courses }

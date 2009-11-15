@@ -7,4 +7,17 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def login_required
+    if session[:user]
+      return true
+    end
+    flash[:message]='Please login to continue'
+    redirect_to :controller => "user", :action => "login"
+  end
+
+  def current_user
+    session[:user]
+  end
+  
 end
