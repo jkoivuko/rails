@@ -1,2 +1,22 @@
-<h1>User#signup</h1>
-<p>Find me in app/views/user/signup.html.erb</p>
+<h1>Create account</h1>
+
+<%= flash[:message] %>
+
+<% form_for :user, :url => { :action => "signup" } do |f| %>
+
+  <%= f.error_messages %>
+
+ Login: <%= f.text_field :login %><br />
+ Real name: <%= f.text_field :login %><br />
+ Student number: <%= f.text_field :login %><br />
+
+ Password: <%= f.password_field :password %><br />
+ Confirm password: <%= f.password_field :password2 %><br />
+ 
+  <p>
+    <%= f.submit 'Login' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', courses_path %>
