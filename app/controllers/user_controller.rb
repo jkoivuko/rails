@@ -1,12 +1,18 @@
 class UserController < ApplicationController
 
-    before_filter :login_required, :only=>['welcome', 'change_password', 'edit']
-
+    before_filter :login_required, :except=>['signup',"login"]
+    active_scaffold :user
+  
+       
     def signup
-      @user = User.new(@params[:user])
       if request.post?  
+        @user = User.new(:login => params[:user][:login], :realname => params[:user][:realname],
+                         :studentnum => params[:user][:studentnum])
+        # tehdään itse vielä
+        @user.hashed_password = User.encrypt(params[:pw][:password]) if params[:pw][:password] == (params[:pw][:password2])                 
+        
         if @user.save
-          session[:user] = User.authenticate(@user.login, @user.password)
+          session[:user] = User.authenticate(@user.login, params[:pw][:password])
           flash[:message] = "Signup successful"
           redirect_to :action => 'index', :controller => :courses          
         else
@@ -49,6 +55,10 @@ class UserController < ApplicationController
 
     def welcome
     end
+    
+    def edit
+    end
+    
 
 end
   

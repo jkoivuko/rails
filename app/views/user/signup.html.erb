@@ -2,21 +2,23 @@
 
 <%= flash[:message] %>
 
+
 <% form_for :user, :url => { :action => "signup" } do |f| %>
 
   <%= f.error_messages %>
 
  Login: <%= f.text_field :login %><br />
- Real name: <%= f.text_field :login %><br />
- Student number: <%= f.text_field :login %><br />
+ Real name: <%= f.text_field :realname %><br />
+ Student number: <%= f.text_field :studentnum %><br />
 
- Password: <%= f.password_field :password %><br />
- Confirm password: <%= f.password_field :password2 %><br />
- 
+ Password: <%= password_field :pw, :password %><br />
+ Confirm password: <%= password_field :pw, :password2 %><br />
+
   <p>
-    <%= f.submit 'Login' %>
+    <%= f.submit 'Create account' %>
   </p>
 
 <% end %>
 
 <%= link_to 'Back', courses_path %>
+
