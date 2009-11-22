@@ -1,4 +1,22 @@
-	<h1> Instance <%= @instance.name %> of <%= @instance.course %> 
+<h1> Instance <%= @instance.name %> of <%= @instance.course.name %> </h1>
+
+Description:<br/>
+
+<p><%= @instance.description %></p>
+
+<h3> Exercise groups </h3>
+
+<table>
+<% @instance.exercisegroups.each do |eg| %>
+  <tr>
+	<td><%= eg.name %></td>
+	<td><%= eg.room %></td>
+	
+    <td><%= eg.start_date %> length <%= eg.length%></td>
+   </tr>
+<% end %>
+</table>
+<br />
 
 <%= link_to 'Edit', edit_instance_path(@instance) %> |
-<%= link_to 'Back', instances_path %>
+<%= link_to 'Back', course_path %>

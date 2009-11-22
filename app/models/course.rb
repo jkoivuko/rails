@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
   
   validates_presence_of :name, :description
-  has_many :instances
-  
+  has_many :instances, :dependent => :destroy
+
 end
