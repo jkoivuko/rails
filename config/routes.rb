@@ -2,6 +2,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :courses
   map.resources :users
+  map.resources :courses, :has_many => :instances #, :shallow => true
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 

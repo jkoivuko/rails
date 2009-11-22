@@ -1,8 +1,19 @@
-
+<h1>Course details</h1>
 Description:<br/>
 
 <p><%= @course.description %></p>
 
+<h3> Instances </h3>
+
+<table>
+<% @course.instances.each do |instance| %>
+  <tr>
+	<td><%= link_to instance.name, course_instance_path(instance) %></td>
+    <td>Starts <%= instance.start_date %></td>
+   </tr>
+<% end %>
+</table>
+<br />
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
