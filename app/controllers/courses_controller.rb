@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses.xml
   def index
     @user=session[:user]
-    @courses = Course.all
+    @courses = Course.all_in_order
     
     respond_to do |format|
       format.html # index.html.erb
