@@ -8,7 +8,7 @@ Description:<br/>
 <table>
 <% @course.instances.each do |instance| %>
   <tr>
-	<td><%= link_to instance.name, course_instance_path(instance) %></td>
+	<td><%= link_to instance.name, course_instance_path(@course, instance) %></td>
     <td>Starts <%= instance.start_date %></td>
    </tr>
 <% end %>

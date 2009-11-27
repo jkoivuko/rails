@@ -2,9 +2,17 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :instances
 
 
-  map.resources :courses
+  #map.resources :courses
   map.resources :users
   map.resources :courses, :has_many => :instances #, :shallow => true
+  
+  # admin scaffold
+   map.namespace :admin do |admin| 
+       admin.resources :users,    :active_scaffold => true 
+       admin.resources :courses,  :active_scaffold => true, :has_many => [:instances]
+       admin.resources :instances, :active_scaffold => true, :has_many => [:exercisegroups]
+       admin.resources :exercisegroups, :active_scaffold => true
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
