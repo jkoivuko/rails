@@ -1,10 +1,13 @@
 class CoursesController < ApplicationController
   before_filter :login_required
   
+  layout "loggedin"
+  
+  
   # GET /courses
   # GET /courses.xml
   def index
-    @user=session[:user]
+    @user=current_user
     @courses = Course.all_in_order
     
     respond_to do |format|

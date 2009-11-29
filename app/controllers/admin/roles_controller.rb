@@ -1,6 +1,7 @@
-class Admin::CoursesController < ApplicationController
+class Admin::RolesController < ApplicationController
   layout "admin"
-  active_scaffold :course
+  active_scaffold :roles
+  
   before_filter :login_required
   before_filter :admin_required
   

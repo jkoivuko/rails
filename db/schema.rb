@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091122234220) do
+ActiveRecord::Schema.define(:version => 20091129180714) do
+
+  create_table "admins", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "admins_users", :id => false, :force => true do |t|
+    t.integer "admin_id"
+    t.integer "user_id"
+  end
+
+  add_index "admins_users", ["admin_id"], :name => "index_admins_users_on_admin_id"
+  add_index "admins_users", ["user_id"], :name => "index_admins_users_on_user_id"
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -39,6 +51,18 @@ ActiveRecord::Schema.define(:version => 20091122234220) do
     t.integer  "course_id"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "hashed_password"
@@ -46,6 +70,13 @@ ActiveRecord::Schema.define(:version => 20091122234220) do
     t.string   "studentnum"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.string   "remember_token"
+    t.datetime "remember_token_expires_at"
   end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

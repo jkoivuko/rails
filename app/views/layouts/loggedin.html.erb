@@ -4,11 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Instances: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <title>Ilmo 2.0</title>
+
 </head>
 <body>
-
+	<h1>Ilmo 2.0</h1> 
+	
+	<p>Logged in as <%= current_user.realname %> ( <%= link_to 'Settings', :controller => "user", :action => "edit" %> | <%= link_to 'Logout', logout_path %>
+	<% if (current_user.has_role? :admin) %> 
+	| <%= link_to 'Admin', "/admin" %>
+	<% end %>)</p>
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
