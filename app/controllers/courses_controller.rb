@@ -51,6 +51,8 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         flash[:notice] = 'Course was successfully created.'
+        Newsfeed.append("New course #{@course.name} was created")
+        
         format.html { redirect_to(@course) }
         format.xml  { render :xml => @course, :status => :created, :location => @course }
       else

@@ -17,7 +17,7 @@ class InstancesController < ApplicationController
   # GET /instances/1.xml
   def show
     @instance = Instance.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @instance }

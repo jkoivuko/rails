@@ -6,13 +6,14 @@ class RegistrationsController < ApplicationController
     eg = Exercisegroup.find(params[:id])
     
     if (eg.register_user(current_user))
+      Newsfeed.append("#{current_user.realname} registered to group #{eg.name} of #{eg.instance.name} / #{eg.instance.course.name}")
+
       flash[:notice] = "Registration successfully"
     else
       flash[:notice] = "Registration failed"
     end
-    
+  
     redirect_to instance_path(eg.instance)
-    
   end
 
   def view

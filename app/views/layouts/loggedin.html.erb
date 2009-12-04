@@ -18,5 +18,13 @@
 
 <%= yield %>
 
+<h2> Newsfeed </h2>
+
+<ul>
+<% Newsfeed.latest.each do |entry| %>
+<li><%= entry.text %></li>
+<% end %>
+</ul>
+
 </body>
 </html>
