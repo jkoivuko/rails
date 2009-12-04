@@ -20,11 +20,10 @@ class UsersController < ApplicationController
       # reset session
       self.current_user = @user # !! now logged in
       
-      Newsfeed.append("#{current_user} just created account!")
+      Newsfeed.append("#{current_user.realname} just created account!")
       
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
-    else
+      else
       flash[:notice]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
     end
