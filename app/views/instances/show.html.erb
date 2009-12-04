@@ -1,4 +1,4 @@
-<h1> Instance <%= @instance.name %> of <%= @instance.course.name %> </h1>
+<h2> Instance <%= @instance.name %> of <%= @instance.course.name %> </h2>
 
 <%= flash[:notice] %> <br/>
 
@@ -20,6 +20,9 @@ Description:<br/>
 <% else %>
     <td><%= button_to 'Register', register_path(eg.id) %></td>
 <% end %>
+<% if current_user.has_role?(:admin) %>
+   <td><%= link_to 'Send mail', register_sendmail_path(eg.id) %></td>
+<% end%>
    </tr>
 <tr>
 	<td style="vertical-align: top">Registered users</td>

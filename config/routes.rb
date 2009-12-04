@@ -13,6 +13,8 @@ ActionController::Routing::Routes.draw do |map|
   map.register 'exercisegroups/:id/register', :controller => 'registrations', :action => 'new', 
   :conditions => { :method => :post }
   
+  map.register_sendmail 'exercisegroups/:id/sendmail', :controller => 'registrations', :action => 'sendmail' #, :conditions => { :method => :post }
+  
   # admin scaffold
    map.namespace :admin do |admin| 
        admin.resources :users,    :active_scaffold => true, :has_many => [:roles, :registrations]  

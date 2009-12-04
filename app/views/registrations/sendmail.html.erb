@@ -1,0 +1,9 @@
+<h2>Write your mail</h2>
+
+<% form_tag :url => register_sendmail_path do |f| -%>
+
+<p><%= label_tag 'message' %><br/>
+<%= text_area_tag :message %></p>
+
+<p><%= submit_tag 'Send' %></p>
+<% end -%>
