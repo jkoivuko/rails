@@ -1,5 +1,7 @@
 <h1> Instance <%= @instance.name %> of <%= @instance.course.name %> </h1>
 
+<%= flash[:notice] %> <br/>
+
 Description:<br/>
 
 <p><%= @instance.description %></p>
@@ -12,11 +14,24 @@ Description:<br/>
 	<td><%= eg.name %></td>
 	<td><%= eg.room %></td>
 	
-    <td><%= eg.start_date %> to <%= eg.end_date %></td>
+    <td><%= eg.start_date.strftime("%H:%M") %> to <%= eg.end_date.strftime("%H:%M") %></td>
+<% if eg.users.include? current_user %>
+	<td>Registered into!</td>
+<% else %>
+    <td><%= button_to 'Register', register_path(eg.id) %></td>
+<% end %>
    </tr>
+<tr>
+	<td style="vertical-align: top">Registered users</td>
+	<td cellspan="3">
+		<% eg.users.each do |user|%>
+		<%= user.realname %><br/>
+		<% end %>
+	</td>
+</tr>
 <% end %>
 </table>
 <br />
 
 <%= link_to 'Edit', edit_instance_path(@instance) %> |
-<%= link_to 'Back', course_path %>
+<%= link_to 'Back', course_path(@instance.course) %>

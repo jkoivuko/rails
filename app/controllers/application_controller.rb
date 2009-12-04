@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
   
   def login_required
     #if session[:user]
@@ -24,12 +23,8 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  #def current_user
-  #  session[:user]
-  #end
-  
   ActiveScaffold.set_defaults do |config| 
-     config.ignore_columns.add [:created_at, :updated_at, :lock_version]
+     config.ignore_columns.add [:created_at, :updated_at, :lock_version, :hashed_password, :salt, :crypted_password]
    end
    
    def admin_required

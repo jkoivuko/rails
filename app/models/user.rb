@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   # You may wish to modify it to suit your need
   has_and_belongs_to_many :roles
   
+  
+  has_many :registrations
+  has_many :exercisegroups, :through => :registrations #, :source => :exercisegroup
+  
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always
   def has_role?(role_in_question)
@@ -18,7 +22,9 @@ class User < ActiveRecord::Base
   end
   # ---------------------------------------
   
-  
+  def to_label
+       realname
+   end
   
   
   include Authentication

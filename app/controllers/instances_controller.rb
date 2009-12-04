@@ -1,6 +1,9 @@
 class InstancesController < ApplicationController
   # GET /instances
   # GET /instances.xml
+
+  layout "loggedin"
+
   def index
     @instances = Instance.all
 
