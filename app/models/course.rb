@@ -3,6 +3,7 @@ class Course < ActiveRecord::Base
   validates_presence_of :name, :description
   has_many :instances, :dependent => :destroy
   has_many :exercisegroups, :through => :instances 
+  has_many :separate_exams, :dependent => :destroy
   
   named_scope :all_in_order, :order => "name ASC"
   
