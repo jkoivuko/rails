@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091206182929) do
+ActiveRecord::Schema.define(:version => 20091206193837) do
 
   create_table "admins", :force => true do |t|
     t.string "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20091206182929) do
 
   add_index "admins_users", ["admin_id"], :name => "index_admins_users_on_admin_id"
   add_index "admins_users", ["user_id"], :name => "index_admins_users_on_user_id"
+
+  create_table "course_feedbacks", :force => true do |t|
+    t.integer  "instance_id"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -86,6 +93,14 @@ ActiveRecord::Schema.define(:version => 20091206182929) do
 
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
+  create_table "separate_exams", :force => true do |t|
+    t.string   "name"
+    t.integer  "course_id"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"
