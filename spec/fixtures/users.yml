@@ -1,7 +1,19 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-# one:
-#   column: value
-#
-# two:
-#   column: value
+one:
+    id: 1
+    login: jani
+    realname: jani k
+    studentnum: 13123213
+    email: jani@fdfdfdsfs.fi
+    hashed_password: password
+    crypted_password: 
+  
+two:
+  id: 2
+  login: jani2
+  realname: jani k
+  studentnum: 13123213
+  email: jani@fdfdfdsdsafs.fi
+  #password: password
+  #password_confirmation: password
+  hashed_password: password
+  crypted_password: 

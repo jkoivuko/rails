@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   
   has_many :registrations
   has_many :exercisegroups, :through => :registrations #, :source => :exercisegroup
+  has_many :friendships
+  has_many :friends, :through => :friendships, :source => :friend
   
   # has_role? simply needs to return true or false whether a user has a role or not.  
   # It may be a good idea to have "admin" roles return true always
@@ -20,8 +22,13 @@ class User < ActiveRecord::Base
     return true if @_list.include?("admin")
     (@_list.include?(role_in_question.to_s) )
   end
-  # ---------------------------------------
   
+  def be_friend_with(friend)
+    self.friends << friend unless self.friends.include?(friends)
+    friend.friends << self unless friend.friends.include?(self)
+  end
+  
+    
   def to_label
        realname
    end
@@ -67,7 +74,8 @@ class User < ActiveRecord::Base
   end
 
   protected
-    
+  
+  
 
 
 end

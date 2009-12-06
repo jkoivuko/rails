@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091204035527) do
+ActiveRecord::Schema.define(:version => 20091206182929) do
 
   create_table "admins", :force => true do |t|
     t.string "name"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(:version => 20091204035527) do
     t.datetime "start_date"
     t.datetime "end_date"
   end
+
+  create_table "friendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
+  add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
 
   create_table "instances", :force => true do |t|
     t.string   "description"
