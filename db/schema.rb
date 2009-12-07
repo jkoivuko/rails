@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091206193837) do
+ActiveRecord::Schema.define(:version => 20091207002455) do
 
   create_table "admins", :force => true do |t|
     t.string "name"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20091206193837) do
   add_index "admins_users", ["admin_id"], :name => "index_admins_users_on_admin_id"
   add_index "admins_users", ["user_id"], :name => "index_admins_users_on_user_id"
 
+  create_table "course_categories", :force => true do |t|
+    t.integer  "course_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "course_feedbacks", :force => true do |t|
     t.integer  "instance_id"
     t.string   "message"
@@ -35,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20091206193837) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "course_category_id"
   end
 
   create_table "exercisegroups", :force => true do |t|
