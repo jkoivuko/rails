@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
 
   #map.resources :courses
   map.resources :users
+  map.resources :course_feedbacks
+  
   #map.resources :users do |users|
   #     users.resources :profile, :shallow => true
   #     users.resources :friends
@@ -16,7 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   :conditions => { :method => :get }
   
   
-  map.resources :courses, :has_many => :instances #, :shallow => true
+  map.resources :courses, :has_many => {:instances => :course_feedbacks} #, :shallow => true
   
   map.register 'exercisegroups/:id/register', :controller => 'registrations', :action => 'new', 
   :conditions => { :method => :post }

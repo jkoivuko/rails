@@ -36,5 +36,9 @@ Description:<br/>
 </table>
 <br />
 
+<p><%= link_to 'Wanna leave anonymous feedback to this course?', new_course_instance_course_feedback_path(@instance.course, @instance) %>
+</p>
+<br />
+
 <%= link_to 'Edit', edit_instance_path(@instance) %> |
 <%= link_to 'Back', course_path(@instance.course) %>
