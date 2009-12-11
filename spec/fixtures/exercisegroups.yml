@@ -2,7 +2,8 @@ eg:
     id: 1
     room: a123
     name: test eg
-    date: 
+    date: 2009-12-06
     instance_id: 1
-    start_date: 
-    end_date: 
+    start_date: 2009-12-06 18:50:46 
+    end_date: 2009-12-06 18:50:46
+    size: 25

@@ -5,10 +5,10 @@ describe Exercisegroup do
     @valid_attributes = {
         :room => "A123",
         :name => "Eka",
-        :date => "2009-12-06",
+        :date => Date.parse("2009-12-06"),
         :instance_id => 1,
-        :start_date => "2009-12-06 18:50:46",
-        :end_date => "2009-12-06 18:55:46",
+        :start_date => Date.parse("2009-12-06 18:50:46"),
+        :end_date => Date.parse("2009-12-06 18:55:46"),
         :size => "2"
     }
   end
