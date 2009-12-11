@@ -1,7 +1,11 @@
 <h1>Course details</h1>
-Description:<br/>
 
-<p><%= @course.description %></p>
+<h3> Category </h3>
+<p><%=h @course.course_category ? @course.course_category.name : "uncategorized" %></p>
+	
+<h3> Description </h3>
+
+<p><%=h @course.description %> </p>
 
 <h3> Instances </h3>
 
