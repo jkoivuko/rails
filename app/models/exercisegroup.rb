@@ -9,7 +9,7 @@ class Exercisegroup < ActiveRecord::Base
   
   
   def register_user(user)
-    unless self.instance.users.include?(user)
+    unless self.instance.users.include?(user) || self.size == self.users.size 
       self.users << user
       return true
     end

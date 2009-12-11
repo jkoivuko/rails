@@ -14,9 +14,11 @@ describe Course do
   
   it "should be able to find by category" do
   
-    Course.first.course_category = CourseCategory.create!(:name => "important")
+    c = Course.find(1)
+    c.course_category = CourseCategory.create(:name => "important")
+    c.save!
     
-    Course.find_by_category("important").should == Course.first
+    Course.all_in_category("important").include?(Course.find(1)).should == true
     
       
   end

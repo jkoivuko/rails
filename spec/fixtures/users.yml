@@ -16,4 +16,16 @@ two:
   #password: password
   #password_confirmation: password
   hashed_password: password
-  crypted_password: 
+  crypted_password:
+      
+three:
+  id: 3
+  login: jani3
+  realname: janidsfds k
+  studentnum: 131123213
+  email: jani@fffdfdfdsdsafs.fi
+  #password: password
+  #password_confirmation: password
+  hashed_password: password
+  crypted_password:
+

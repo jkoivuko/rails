@@ -14,8 +14,10 @@ describe CourseCategory do
   
   it "should be assignable to a course" do
   
-    Course.first.course_category = CourseCategory.create!(@valid_attributes)
-  
+    c = Course.first
+    c.course_category = CourseCategory.create!(@valid_attributes)
+    c.save!
+    
     Course.first.course_category.name.should == "value for name"
       
   end
