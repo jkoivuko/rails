@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  #include AuthenticatedSystem
+  before_filter :login_required, :except => [:new, :create] 
+  before_filter :check_user, :except => [:new, :create]
   
+  layout "loggedin"
 
   # render new.rhtml
   def new
@@ -14,10 +15,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
-            # Protects against session fixation attacks, causes request forgery
-      # protection if visitor resubmits an earlier form using back
-      # button. Uncomment if you understand the tradeoffs.
-      # reset session
       self.current_user = @user # !! now logged in
       
       Newsfeed.append("#{current_user.realname} just created account!")
@@ -28,4 +25,14 @@ class UsersController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  def profile
+  
+  end
+  
+  # /user/be_friend_with/:id
+  def be_friend_with
+    current_user.be_friend_with(:id)
+  end
+     
 end

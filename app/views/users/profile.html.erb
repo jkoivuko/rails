@@ -1,0 +1,20 @@
+<h1> User profile </h1>
+
+<pre>
+<%=h current_user.login %>
+<%=h current_user.realname %>
+<%=h current_user.studentnum %>
+</pre>
+
+
+<h2>Course registrations</h2>
+<table><td>Course</td><td>Instance</td><td>Exercisegroup</td>
+	<% current_user.exercisegroups.each do |eg| %>
+	  <tr>
+		<td><%= eg.instance.course.name %></td>
+		<td><%= eg.instance.name %></td>
+		<td><%= eg.name %>
+	  </tr>
+	<% end %>
+	</table>
+	

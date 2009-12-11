@@ -8,6 +8,14 @@ ActionController::Routing::Routes.draw do |map|
 
   #map.resources :courses
   map.resources :users
+  #map.resources :users do |users|
+  #     users.resources :profile, :shallow => true
+  #     users.resources :friends
+  #end
+  map.user_profile 'users/:id/profile', :controller => 'users', :action => 'profile', 
+  :conditions => { :method => :get }
+  
+  
   map.resources :courses, :has_many => :instances #, :shallow => true
   
   map.register 'exercisegroups/:id/register', :controller => 'registrations', :action => 'new', 

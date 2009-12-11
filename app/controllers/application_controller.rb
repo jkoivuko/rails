@@ -31,4 +31,13 @@ class ApplicationController < ActionController::Base
      current_user.has_role? :admin  
    end
    
+   # used to check that profile edits are done by authorized user
+   def check_user
+     if current_user.id == params[:id].to_i
+       return true
+     end
+     flash[:message] = 'Not allowed to see'
+     redirect_to '/'
+   end
+   
 end
