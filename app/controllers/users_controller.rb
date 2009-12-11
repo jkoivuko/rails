@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  
+   
   before_filter :login_required, :except => [:new, :create] 
   before_filter :check_user, :except => [:new, :create]
   
-  layout "loggedin"
+  layout "loggedin" unless session.nil?
 
+  
   # render new.rhtml
   def new
     @user = User.new
@@ -31,8 +32,8 @@ class UsersController < ApplicationController
   end
   
   # /user/be_friend_with/:id
-  def be_friend_with
-    current_user.be_friend_with(:id)
-  end
+  #def be_friend_with
+  #  current_user.be_friend_with(:id)
+  #end
      
 end
