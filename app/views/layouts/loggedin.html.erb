@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<h1>Ilmo 2.0</h1> 
+	<h1><a href="/">Ilmo 2.0</a></h1> 
 	
 	<p>Logged in as <%= current_user.realname %> ( <%= link_to 'Profile', user_profile_path(current_user) %> | <%= link_to 'Logout', logout_path %>
 	<% if (current_user.has_role? :admin) %> 

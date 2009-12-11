@@ -13,6 +13,19 @@ Description:<br/>
    </tr>
 <% end %>
 </table>
+
+<h3> Separate Exams </h3>
+
+<table><td>Name/Type</td><td>Date</td>
+<% @course.separate_exams.each do |se| %>
+  <tr>
+	<td><%=h se.name %></td>
+	<td><%= se.date %></td>
+   </tr>
+<% end %>
+</table>
+
+
 <br />
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
